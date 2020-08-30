@@ -1,0 +1,11 @@
+INTERNAL_ID:
+  to: id
+FIRST_NAME:
+  to: name.first
+MIDDLE_NAME:
+  to: name.middle
+  omitifempty: true
+LAST_NAME:
+  to: name.last
+PHONE_NUM:
+  to: phone        

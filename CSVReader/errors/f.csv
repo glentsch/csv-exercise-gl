@@ -1,0 +1,2 @@
+LINE_NO,ERROR_MSG
+0,"{""PHONE_NUM"": [""value does not match regex '^\\(?\\d{3}\\)?[\\s-]\\d{3}[\\s-]\\d{4}$'""]}"

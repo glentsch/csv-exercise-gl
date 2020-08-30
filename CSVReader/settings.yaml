@@ -1,0 +1,4 @@
+input_directory: ../../input/
+output_directory: ../../output/
+error_directory: ../../errors/
+processed_files: ../processed_files.csv

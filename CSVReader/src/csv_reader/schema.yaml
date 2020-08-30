@@ -1,0 +1,26 @@
+INTERNAL_ID:
+  type: string
+  minlength: 1
+  maxlength: 8
+  required: true
+  regex: ^\d+$
+FIRST_NAME:
+  type: string
+  minlength: 1
+  maxlength: 15
+  required: true
+MIDDLE_NAME:
+  type: string
+  minlength: 0
+  maxlength: 15
+  empty: true
+LAST_NAME:
+  type: string
+  minlength: 1
+  maxlength: 15
+  required: true
+PHONE_NUM:
+  type: string
+  empty: false
+  regex: ^\(?\d{3}\)?[\s-]\d{3}[\s-]\d{4}$   
+  required: true       
