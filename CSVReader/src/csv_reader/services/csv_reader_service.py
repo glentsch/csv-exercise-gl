@@ -1,13 +1,10 @@
-from csv_reader.utils import (
-    read_document,
-    write_error_file,
-    write_success_file,
-    delete_file,
-)
+import csv
 from collections import namedtuple
 from copy import copy
-from os.path import splitext, basename, join
-import csv
+from os.path import basename, join, splitext
+
+from csv_reader.utils import (delete_file, read_document, write_error_file,
+                              write_success_file)
 
 Error = namedtuple("Error", "line errors")
 

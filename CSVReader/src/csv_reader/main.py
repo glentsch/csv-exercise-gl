@@ -1,20 +1,20 @@
-from csv_reader.services import (
-    CSVReaderService,
-    InputWatcherService,
-    DataTransformationService,
-)
-import yaml
-import cerberus
-from os.path import split, abspath, join
-from queue import Queue
-import threading
 import signal
 import sys
+import threading
+from os.path import abspath, join, split
+from queue import Queue
+
+import cerberus
+import yaml
+
+from csv_reader.services import (CSVReaderService, DataTransformationService,
+                                 InputWatcherService)
 
 try:
-    from yaml import CLoader as Loader, CDumper as Dumper
+    from yaml import CDumper as Dumper
+    from yaml import CLoader as Loader
 except ImportError:
-    from yaml import Loader, Dumper
+    from yaml import Dumper, Loader
 
 input_watcher_service = None
 

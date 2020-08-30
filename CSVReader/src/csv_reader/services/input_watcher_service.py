@@ -1,7 +1,8 @@
-from csv_reader.utils import read_previous_documents, flush_written_documents
 import time
 from os import listdir
 from os.path import isfile, join
+
+from csv_reader.utils import flush_written_documents, read_previous_documents
 
 
 class InputWatcherService:

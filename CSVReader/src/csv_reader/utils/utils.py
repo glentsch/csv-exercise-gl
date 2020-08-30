@@ -1,7 +1,7 @@
 import csv
 import json
-from os.path import exists
 from os import remove
+from os.path import exists
 
 OUTPUT_COL_LINE_NO = "LINE_NO"
 OUTPUT_COL_ERROR_MSG = "ERROR_MSG"
