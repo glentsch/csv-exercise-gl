@@ -3,6 +3,7 @@ import time
 from os import listdir
 from os.path import isfile, join
 
+
 class InputWatcherService:
     def __init__(self, queue, input_directory, processed_files_file, periodic=0.01):
         self.queue = queue
@@ -13,7 +14,11 @@ class InputWatcherService:
 
     def run(self):
         while True:
-            files = {f for f in listdir(self.input_directory) if isfile(join(self.input_directory, f)) and f.endswith(".csv")}
+            files = {
+                f
+                for f in listdir(self.input_directory)
+                if isfile(join(self.input_directory, f)) and f.endswith(".csv")
+            }
             missing_files = files - self.processed_files
             if missing_files:
                 for f in missing_files:
@@ -25,5 +30,3 @@ class InputWatcherService:
         with open(self.processed_files_file, "w+") as out_file:
             for f in self.processed_files:
                 out_file.write(f + "\n")
-
-        

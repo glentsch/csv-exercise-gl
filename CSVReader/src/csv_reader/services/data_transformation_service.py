@@ -1,6 +1,7 @@
 class DataTransformationService:
     def __init__(self, output_schema):
         self.schema = output_schema
+
     def _to_schema(self, data):
         result_data = {}
         for k, v in data.items():
@@ -14,7 +15,7 @@ class DataTransformationService:
                         ref[single_ref] = {}
                     ref = ref[single_ref]
                 print(f"{k} {definition.get('omitifempty')} {v}")
-                if not (definition.get("omitifempty") and not v):    
+                if not (definition.get("omitifempty") and not v):
                     ref[tos[-1]] = v
         return result_data
 
