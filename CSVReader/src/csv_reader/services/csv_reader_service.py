@@ -62,4 +62,4 @@ class CSVReaderService:
                 self.output_directory, splitext(basename(f))[0] + ".json"
             )
             write_success_file(success_file_name, successes)
-            # delete_file(f)
+            delete_file(f)
