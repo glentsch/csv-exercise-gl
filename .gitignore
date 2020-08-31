@@ -1,6 +1,6 @@
 *.pyc
 venv/
-CSVReader/errors/*.csv
-CSVReader/input/*.csv
-CSVReader/output/*.json
-CSVReader/src/processed_files.csv
+errors/*.csv
+input/*.csv
+output/*.json
+src/processed_files.csv
