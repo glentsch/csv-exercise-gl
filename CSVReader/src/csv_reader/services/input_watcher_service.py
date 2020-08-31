@@ -12,19 +12,21 @@ class InputWatcherService:
         self.processed_files_file = processed_files_file
         self.processed_files = read_previous_documents(processed_files_file)
         self.watcher_periodic = periodic
-
-    def run(self):
-        while True:
-            files = {
+    def _get_files(self):
+        files = {
                 f
                 for f in listdir(self.input_directory)
                 if isfile(join(self.input_directory, f)) and f.endswith(".csv")
             }
-            missing_files = files - self.processed_files
-            if missing_files:
-                for f in missing_files:
-                    self.queue.put(join(self.input_directory, f))
-            self.processed_files = self.processed_files & files
+        missing_files = files - self.processed_files
+        if missing_files:
+            for f in missing_files:
+                self.queue.put(join(self.input_directory, f))
+        self.processed_files |= files
+
+    def run(self):
+        while True:
+            self._get_files()
             time.sleep(self.watcher_periodic)
 
     def flush(self):

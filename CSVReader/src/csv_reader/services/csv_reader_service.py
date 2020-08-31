@@ -41,7 +41,6 @@ class CSVReaderService:
                 else:
                     transformed_data = self.transformation_service.transform(row)
                     result_data.append(transformed_data)
-        print(f)
         self._handle_success(result_data, f)
         self._handle_error(error_data, f)
 

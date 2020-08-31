@@ -14,7 +14,6 @@ class DataTransformationService:
                     if ref.get(single_ref) is None:
                         ref[single_ref] = {}
                     ref = ref[single_ref]
-                print(f"{k} {definition.get('omitifempty')} {v}")
                 if not (definition.get("omitifempty") and not v):
                     ref[tos[-1]] = v
         return result_data
