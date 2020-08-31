@@ -12,3 +12,13 @@ This repo contains an exercise intended for Back-End Engineers.
 ## Expectations
 1. Please take no more than 8 hours to work on this exercise. Complete as much as possible and then submit your solution.
 1. This exercise is meant to showcase how you work. With consideration to the time limit, do your best to treat it like a production system.
+
+##How-To
+This program utilizes virtualenv. Please install before proceeding
+1. Run install script `./install.sh`
+1. Source venv `source venv/bin/activate`
+1. Run the code `python src/csv_reader/main.py`
+1. Drop a file with a csv extension in `input`
+
+##Assumptions
+The assumption was made that a processed name would transcend sessions. If a user wrote f.csv in input/, they could not reuse that name. This assumption originated from `files will be considered new if the file name has not been recorded as processed before.`
