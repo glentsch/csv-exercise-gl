@@ -29,6 +29,7 @@ def signal_handler(signum, frame):
     cleanup()
     sys.exit(0)
 
+signal.signal(signal.SIGINT, signal_handler)
 
 def main():
     global input_watcher_service
