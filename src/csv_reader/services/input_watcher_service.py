@@ -31,6 +31,5 @@ class InputWatcherService:
 
     def flush(self):
         with open(self.processed_files_file, "w+") as out_file:
-            print(self.processed_files)
             for f in self.processed_files:
                 out_file.write(f + "\n")
